@@ -1,6 +1,6 @@
 # Input
 
-This is what the CSV file looks like that is used in the example of this project
+This is what the CSV file looks like that is used in the example of this project. 
 
 Deformation (in) | Dial Reading
 ------------ | -------------
