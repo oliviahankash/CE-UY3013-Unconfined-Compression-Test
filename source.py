@@ -23,3 +23,18 @@ class Analysis:
         self.data['Load (lb)'] = self.data['Dial Reading'] * self.calibrationFactor
         self.data['Corrected Area (in2)'] = self.area() / (1 - self.data['Verical Strain'])
         self.data['Stress (lb/in2)'] = self.data['Load (lb)'] / self.data['Corrected Area (in2)']
+
+
+# The following code will plot the stress versus vertical strain curve
+# The x-axis is the vertical strain calculations
+# The y-axis is the stress calculations
+    def plot_stress_vertical_strain(self):
+        x = self.data['Verical Strain']
+        y = self.data['Stress (lb/in2)']
+        plt.plot(x, y, color='blue')
+
+        plt.title('Stress vs. Vertical Strain', fontweight='black', fontfamily='monospace')
+        plt.xlabel('Vertical Strain')
+        plt.ylabel('Stress (lb/in2)')
+        plt.grid(ls='-')
+        plt.show()
