@@ -13,3 +13,13 @@ class Analysis:
 # This function will calculate the area of the sample. It is done by using the input diameter
     def area(self):
         return ((math.pi)/4)*(self.diameter)**2
+
+
+# This function will calculate the vertical strain, load, area, and stress of the sample
+# It is done using the data from the CSV file, as well as the input paramters
+# They are also added to the dataframe so that it is all in one combined table
+    def add_properties(self):
+        self.data['Verical Strain'] = self.data['Deformation (in)']/ self.length
+        self.data['Load (lb)'] = self.data['Dial Reading'] * self.calibrationFactor
+        self.data['Corrected Area (in2)'] = self.area() / (1 - self.data['Verical Strain'])
+        self.data['Stress (lb/in2)'] = self.data['Load (lb)'] / self.data['Corrected Area (in2)']
