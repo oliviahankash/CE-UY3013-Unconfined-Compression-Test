@@ -28,3 +28,11 @@ Outputs:
 
 
 ## How to Use the Program
+
+When you begin running the project, make sure you have your CSV file uploaded to import with your two columns of data: Deformation and Dial Reading.
+
+While running the program, Python will prompt you to input your own data for the parameters. This includes the calibration factor, length of the sample, and diameter of the sample.
+
+After the parameters are inputted, the program will continue to make the necessary calculations. It will then plot the curve of Stress vs. Vertical Strain.
+
+By the end of the program, the unconfined compression strength is determined. The sample will then be classified according to its consistency classification.
