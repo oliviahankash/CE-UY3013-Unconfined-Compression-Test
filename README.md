@@ -24,7 +24,7 @@ Outputs:
 * To use the program, you have to clone/download this repository and navigate to the local directory.
 * Create and activate the virtual environment you choose.
 * Install the required libraries for this program with:
-` install -r requirements.txt `
+` install requirements.txt `
 
 
 ## How to Use the Program
