@@ -38,3 +38,12 @@ class Analysis:
         plt.ylabel('Stress (lb/in2)')
         plt.grid(ls='-')
         plt.show()
+
+
+# This function identifies the maximum stress value which is known as the unconfined compression strength
+# It is done by using the max function to located the largest value in the stress data column
+    def get_peak_strength(self):
+        unconfined_compression_strength = max(self.data['Stress (lb/in2)'])
+# A unit conversion from lb/in^2 to lb/ft^2 is performed in order to have it in the correct units to compare it to the classifaction data for consistency identification.
+        ucs_psf = unconfined_compression_strength * 144
+        return ucs_psf
