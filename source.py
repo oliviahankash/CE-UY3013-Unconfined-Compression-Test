@@ -47,3 +47,24 @@ class Analysis:
 # A unit conversion from lb/in^2 to lb/ft^2 is performed in order to have it in the correct units to compare it to the classifaction data for consistency identification.
         ucs_psf = unconfined_compression_strength * 144
         return ucs_psf
+
+
+# Classify the consistency of the clay using the unconfined compression strength of the sample according to the standards
+# The classification ranges are set using if statements
+    def classify_clay(self):
+        ucs_psf = self.get_peak_strength()
+        if 0 <= ucs_psf < 500 :
+            print("Consistency of Clay Sample: Very Soft")
+        elif 500 <= ucs_psf < 1000 :
+            print("Consistency of Clay Sample: Soft")
+        elif 1000 <= ucs_psf < 2000 :
+            print("Consistency of Clay Sample: Medium")
+        elif 2000 <= ucs_psf < 4000 :
+            print("Consistency of Clay Sample: Stiff")
+        elif 4000 <= ucs_psf <= 8000 :
+            print("Consistency of Clay Sample: Very Stiff")
+        else:
+            print("invalid")
+
+
+ # This is the end of the class Analysis   
