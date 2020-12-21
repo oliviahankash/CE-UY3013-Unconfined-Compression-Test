@@ -1,3 +1,9 @@
+# Necessary imports for code
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import math
+
 # This is the beginning of me making my class for the analysis calculations
 
 class Analysis:
@@ -67,4 +73,4 @@ class Analysis:
             print("invalid")
 
 
- # This is the end of the class Analysis   
+ # This is the end of the class Analysis
