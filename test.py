@@ -22,6 +22,7 @@ data
 calibrationFactor = float(input("Calibration Factor in lb: "))
 length = float(input("Length in inches: "))
 diameter = float(input("Diameter in inches: "))
+print('\n')
 
 
 # This is where the class is instantiated and the functions are called
