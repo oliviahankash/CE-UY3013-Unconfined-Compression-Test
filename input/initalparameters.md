@@ -1,6 +1,6 @@
-# Input
+# Values to be inputed when prompted
 
-This is the initial parameter values I used in my example problem
+These are the initial parameter values I used in my example problem for the input section
 
 Paramater | Value
 ------------ | -------------
