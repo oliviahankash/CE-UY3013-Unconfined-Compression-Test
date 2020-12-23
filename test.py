@@ -1,5 +1,11 @@
 from source import Analysis
 
+# Necessary imports for code
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import math
+
 # Import your inital CSV data file
 # This example is from the data table from my Input File
 data = pd.read_csv('Unconfined_Compression_Test_InitialData.csv')
