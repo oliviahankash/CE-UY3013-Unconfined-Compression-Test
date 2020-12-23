@@ -1,7 +1,8 @@
-# These are the values used for the inputs in my test example
+# Input
 
+This is the initial parameter values I used in my example problem
 
-Initial Parameter | Value
+Paramater | Value
 ------------ | -------------
 Calibration Factor in lb  |    0.375
 Length in inches  |   2.5
