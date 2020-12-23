@@ -10,7 +10,7 @@ Assumptions:
 
 Inputs:
 
-* A CSV containing file containing the Deformation (inches) and Dial Reading measurements from the Unconfined Compression Test experiment
+* A CSV containing file containing the Deformation (inches) and Dial Reading measurements from your Unconfined Compression Test experiment
 
 
 Outputs:
@@ -35,4 +35,4 @@ While running the program, Python will prompt you to input your own data for the
 
 After the parameters are inputted, the program will continue to make the necessary calculations. It will also plot the curve of Stress vs. Vertical Strain.
 
-By the end of the program, the unconfined compression strength is determined. The sample will be classified according to its consistency classification and stated.
+By the end of the program, the unconfined compression strength is determined. The sample will be classified according to its consistency classification and stated. It will also display the Stress vs. Vertical Strain plot.
