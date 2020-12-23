@@ -1,7 +1,8 @@
 # These are the values used for the inputs in my test example
 
 
-
+Initial Parameter | Value
+------------ | -------------
 Calibration Factor in lb |    0.375
 Length in inches  |   2.5
 Diameter in inches  |   1.5
