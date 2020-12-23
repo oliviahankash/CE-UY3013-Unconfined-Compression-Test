@@ -17,13 +17,18 @@ class Analysis:
 
 
 # This function will calculate the area of the sample. It is done by using the input diameter
+# The units for the area is inches squared
     def area(self):
         return ((math.pi)/4)*(self.diameter)**2
 
 
 # This function will calculate the vertical strain, load, area, and stress of the sample
-# It is done using the data from the CSV file, as well as the input paramters
-# They are also added to the dataframe so that it is all in one combined table
+# It is done using the data from the CSV file, as well as the input paramters.
+# They are also added to the dataframe so that it is all in one combined table.
+# The units for vertical strain is unitless since it is a ratio of the deformation and the length of the sample.
+# The units for the load is in pounds.
+# The units for the area is inches squared.
+# The units for the calculated stress is pounds per square inch.
     def add_properties(self):
         self.data['Verical Strain'] = self.data['Deformation (in)']/ self.length
         self.data['Load (lb)'] = self.data['Dial Reading'] * self.calibrationFactor

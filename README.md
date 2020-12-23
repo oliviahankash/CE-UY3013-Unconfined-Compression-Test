@@ -15,8 +15,10 @@ Inputs:
 
 Outputs:
 
+* the area of the sample
 * the unconfined compression strength of the sample
 * the classification of the consistency of the clay
+* the Stress vs. Vertical Strain Curve
 
 
 ## Set Up
