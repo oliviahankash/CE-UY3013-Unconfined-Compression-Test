@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import math
+from scipy import interpolate
 
 # Import your inital CSV data file
 # This example is from the data table from my Input File
@@ -29,9 +30,11 @@ print('\n')
 # The outputs given are:
 # - the area of the sample,
 # - the Stress vs. Vertical Strain Curve
+# - the Mohr Circle analysis with stress failures and undrained shear strength
 # - the unconfined compression strength
 # - the consistency classification
 # - the calculations performed presented in a table
+
 test = Analysis(data, calibrationFactor, length, diameter)
 print("The area (in^2) of the sample is: ")
 print(test.area())
@@ -40,7 +43,10 @@ test.add_properties()
 print("The Stress vs. Strain plot: ")
 test.plot_stress_vertical_strain()
 print('\n')
-print("The unconfined compression strength (lb/in^2) of the sample at the peak stress is: ")
+print("Mohr plot: ")
+test.plot_Mohr()
+print('\n')
+print("The peak strength (lb/in^2) of the sample is: ")
 print(test.get_peak_strength())
 print('\n')
 test.classify_clay()
