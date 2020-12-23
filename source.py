@@ -47,7 +47,7 @@ class Analysis:
 # These next three lines plot the point of the peak stress represented by the red point
         ymax = max(self.data['Stress (lb/in2)'])
         xmax = x[y.argmax()]
-        plt.plot(xmax, ymax, 'ro', color = 'red' , label = 'peak stress')
+        plt.plot(xmax, ymax, 'ro', color = 'red' , label = 'peak stress (lb/in^2)')
 
 # These next lines are for the titles, labels, and design of the plot itslef
         plt.title('Stress vs. Vertical Strain', fontweight='black', fontfamily='monospace')
