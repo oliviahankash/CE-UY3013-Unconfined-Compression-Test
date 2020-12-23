@@ -27,12 +27,22 @@ diameter = float(input("Diameter in inches: "))
 # This is where the class is instantiated and the functions are called
 # The outputs given are:
 # - the area of the sample,
-# - the Stress vs. Vertical Strain Curve,
-# - the unconfined compression strength,
-# - and the consistency classification
+# - the Stress vs. Vertical Strain Curve
+# - the unconfined compression strength
+# - the consistency classification
+# - the calculations performed presented in a table
 test = Analysis(data, calibrationFactor, length, diameter)
+print("The area (in^2) of the sample is: ")
 print(test.area())
+print('\n')
 test.add_properties()
+print("The Stress vs. Strain plot: ")
 test.plot_stress_vertical_strain()
+print('\n')
+print("The compression strength (lb/in^2) of the sample is: ")
 print(test.get_peak_strength())
+print('\n')
 test.classify_clay()
+print('\n')
+print("The following table displays the calculation results: ")
+print(data)

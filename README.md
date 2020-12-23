@@ -19,6 +19,7 @@ Outputs:
 * the unconfined compression strength of the sample
 * the classification of the consistency of the clay
 * the Stress vs. Vertical Strain Curve
+* the calculations of the experiment presented in one table
 
 
 ## Set Up
@@ -37,4 +38,4 @@ While running the program, Python will prompt you to input your own data for the
 
 After the parameters are inputted, the program will continue to make the necessary calculations. It will also plot the curve of Stress vs. Vertical Strain.
 
-By the end of the program, the unconfined compression strength is determined. The sample will be classified according to its consistency classification and stated. It will also display the Stress vs. Vertical Strain plot.
+By the end of the program, the unconfined compression strength is determined. The sample will be classified according to its consistency classification and stated. The Stress vs. Vertical Strain plot is displayed. The calculations performed in the code will be presented in a final table.
