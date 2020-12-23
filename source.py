@@ -1,14 +1,22 @@
+# -- Imports ------------------------------------------------------------------
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import math
+from scipy import interpolate
+
+# This is the beginning of me making my class for the analysis calculations
+
 # Necessary imports for code
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import math
-
-# This is the beginning of me making my class for the analysis calculations
+from scipy import interpolate
 
 class Analysis:
 
-# First I have to initialize the object with csvfiledata, the calibration factor, the length of the sample, and the diameter of the sample.
+# First I have to initialize the object with csvfiledata, the calibration factor, the length of the sample, and the diameter of the sample
     def __init__(self, csvFileData, calibrationFactor, length, diameter):
         self.data = csvFileData
         self.calibrationFactor = calibrationFactor
@@ -16,13 +24,13 @@ class Analysis:
         self.diameter = diameter
 
 
-# This function will calculate the area of the sample. It is done by using the input diameter.
-# The units for the area is inches squared.
+# This function will calculate the area of the sample. It is done by using the input diameter
+# The units for the area is inches squared
     def area(self):
         return ((math.pi)/4)*(self.diameter)**2
 
 
-# This function will calculate the vertical strain, load, area, and stress of the sample.
+# This function will calculate the vertical strain, load, area, and stress of the sample
 # It is done using the data from the CSV file, as well as the input paramters.
 # They are also added to the dataframe so that it is all in one combined table.
 # The units for vertical strain is unitless since it is a ratio of the deformation and the length of the sample.
@@ -47,7 +55,7 @@ class Analysis:
 # These next three lines plot the point of the peak stress represented by the red point
         ymax = max(self.data['Stress (lb/in2)'])
         xmax = x[y.argmax()]
-        plt.plot(xmax, ymax, 'ro', color = 'red' , label = 'peak stress (lb/in^2)')
+        plt.plot(xmax, ymax, 'ro', color = 'red' , label = 'unconfined compression strength (lb/in^2)')
 
 # These next lines are for the titles, labels, and design of the plot itslef
         plt.title('Stress vs. Vertical Strain', fontweight='black', fontfamily='monospace')
@@ -58,8 +66,8 @@ class Analysis:
         plt.show()
 
 
-# This function identifies the maximum stress value which is known as the unconfined compression strength.
-# It is done by using the max function to located the largest value in the stress data column.
+# This function identifies the maximum stress value which is known as the unconfined compression strength
+# It is done by using the max function to located the largest value in the stress data column
     def get_peak_strength(self):
         unconfined_compression_strength = max(self.data['Stress (lb/in2)'])
 # A unit conversion from lb/in^2 to lb/ft^2 is performed in order to have it in the correct units to compare it to the classifaction data for consistency identification.
@@ -67,8 +75,8 @@ class Analysis:
         return ucs_psf
 
 
-# Classify the consistency of the clay using the unconfined compression strength of the sample according to the standards.
-# The classification ranges are set using if statements.
+# Classify the consistency of the clay using the unconfined compression strength of the sample according to the standards
+# The classification ranges are set using if statements
     def classify_clay(self):
         ucs_psf = self.get_peak_strength()
         if 0 <= ucs_psf < 500 :
@@ -84,5 +92,33 @@ class Analysis:
         else:
             print("invalid")
 
+
+
+# The following code will plot Mohr’s Circle for the Unconfined Compression Test
+# The x-axis is the Normal Stress (lb/in2)
+# The y-axis is the Shear Stress (lb/in2)
+
+    def plot_Mohr(self):
+# Cu is the undrained shear strength
+      Cu = 0.5 * max(self.data['Stress (lb/in2)'])
+      x = [0,Cu, max(self.data['Stress (lb/in2)'])]
+      y=[0,Cu, 0]
+      x2 = np.linspace(x[0], x[-1], 100)
+      y2 = interpolate.pchip_interpolate(x, y, x2)
+      plt.plot(x2, y2, color = 'blue')
+      plt.plot(x, y, "ro", color = 'red')
+
+# The following three codes are for the sake of specifying and labeling what the three points represent
+      plt.plot(Cu , Cu , 'ro', color = 'red', label = 'undrained shear strength' )
+      plt.plot(0 , 0, 'ro', color = 'green', label = 'normal stress failure'  )
+      plt.plot(max(self.data['Stress (lb/in2)']) , 0, 'ro', color = 'purple' , label = 'unconfined compression strength' )
+
+# These next lines are for the titles, labels, and design of the plot itslef
+      plt.title('Mohr’s Circle for Unconfined Compression Test', fontweight='black', fontfamily='monospace')
+      plt.xlabel('Normal Stress (lb/in2)')
+      plt.ylabel('Shear Stress (lb/in2)')
+      plt.grid(ls='-')
+      plt.legend(loc="lower center")
+      plt.show()
 
  # This is the end of the class Analysis
