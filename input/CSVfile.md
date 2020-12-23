@@ -1,4 +1,4 @@
-# Input
+# CSV file of experimental data results
 
 This is what the CSV file looks like that is used in the example of this project.
 
