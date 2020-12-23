@@ -11,6 +11,7 @@ Assumptions:
 Inputs:
 
 * A CSV containing file containing the Deformation (inches) and Dial Reading measurements from your Unconfined Compression Test experiment
+* The input folder also includes sample parameter input values that are used in my example
 
 
 Outputs:
