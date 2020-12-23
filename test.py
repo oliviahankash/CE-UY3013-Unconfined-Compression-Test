@@ -30,7 +30,7 @@ print('\n')
 # The outputs given are:
 # - the area of the sample,
 # - the Stress vs. Vertical Strain Curve
-# - the Mohr Circle analysis with stress failures and undrained shear strength
+# - Mohr’s Circle for Unconfined Compression Test that locates the undrained shear strength
 # - the unconfined compression strength
 # - the consistency classification
 # - the calculations performed presented in a table
@@ -43,7 +43,7 @@ test.add_properties()
 print("The Stress vs. Strain plot: ")
 test.plot_stress_vertical_strain()
 print('\n')
-print("Mohr plot: ")
+print("Mohr Circle for Unconfined Compression Test: ")
 test.plot_Mohr()
 print('\n')
 print("The peak strength (lb/in^2) of the sample is: ")

@@ -21,6 +21,7 @@ Outputs:
 * the classification of the consistency of the clay
 * the Stress vs. Vertical Strain Curve
 * the calculations of the experiment presented in one table
+* Mohr’s Circle for Unconfined Compression Test that locates the undrained shear strength
 
 
 ## Set Up
@@ -39,4 +40,4 @@ While running the program, Python will prompt you to input your own data for the
 
 After the parameters are inputted, the program will continue to make the necessary calculations. It will also plot the curve of Stress vs. Vertical Strain.
 
-By the end of the program, the unconfined compression strength is determined. The sample will be classified according to its consistency classification and stated. The Stress vs. Vertical Strain plot is displayed. The calculations performed in the code will be presented in a final table.
+By the end of the program, the unconfined compression strength is determined. The sample will be classified according to its consistency classification and stated. The Stress vs. Vertical Strain plot is displayed. The calculations performed in the code will be presented in a final table. Mohr’s Circle for Unconfined Compression Test that locates the undrained shear strength is also demonstrated at the end.
