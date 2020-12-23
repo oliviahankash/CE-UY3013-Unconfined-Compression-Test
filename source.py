@@ -36,18 +36,25 @@ class Analysis:
         self.data['Stress (lb/in2)'] = self.data['Load (lb)'] / self.data['Corrected Area (in2)']
 
 
-# The following code will plot the stress versus vertical strain curve.
-# The x-axis is the vertical strain calculations.
-# The y-axis is the stress calculations.
+# The following code will plot the stress versus vertical strain curve
+# The x-axis is the vertical strain calculations
+# The y-axis is the stress calculations
     def plot_stress_vertical_strain(self):
         x = self.data['Verical Strain']
         y = self.data['Stress (lb/in2)']
         plt.plot(x, y, color='blue')
 
+# These next three lines plot the point of the peak stress represented by the red point
+        ymax = max(self.data['Stress (lb/in2)'])
+        xmax = x[y.argmax()]
+        plt.plot(xmax, ymax, 'ro', color = 'red' , label = 'peak stress')
+
+# These next lines are for the titles, labels, and design of the plot itslef
         plt.title('Stress vs. Vertical Strain', fontweight='black', fontfamily='monospace')
         plt.xlabel('Vertical Strain')
         plt.ylabel('Stress (lb/in2)')
         plt.grid(ls='-')
+        plt.legend(loc="lower right")
         plt.show()
 
 
